@@ -16,15 +16,14 @@ void f_push(stack_t **stack, unsigned int line_number)
 	if (second == NULL)
 	{
 		free(new_node);
-		 _errors(2, line_number, stack); /*Incorrect use of push*/
+		_errors(2, line_number, stack); /*Incorrect use of push*/
 	}
 	if ((isdigit(*second) != 0) || (*second == '-' && isdigit(second[1])))
 		new_node->n = atoi(second);
-	else
+	else 
 	{
-		free(new_node);
-		_errors(2, line_number, stack);
-
+		free(second);
+		_errors(1, line_number, stack);
 	}
 	new_node->next = NULL;
 	new_node->prev = NULL;
@@ -86,7 +85,6 @@ void f_pint(stack_t **head, unsigned int line_number)
 		aux = aux->next;
 	}
 }
-
 /**
  * f_pop - removes the last element added to the stack
  * @head: pointer to list's head
@@ -102,15 +100,18 @@ void f_pop(stack_t **head, unsigned int line_number)
 	aux = *head;
 	while (aux != NULL)
 	{
-		if (aux->next == NULL)
+		if (aux->next == NULL && aux->prev != NULL)
 		{
 			aux->prev->next = NULL;
-			aux->prev = NULL;
+		}
+		else if (aux->prev == NULL && aux->next == NULL)
+		{
 			free(aux);
-			break;
+			*head = NULL;
 		}
 		aux = aux->next;
 	}
+	free(aux);
 }
 /**
  * f_swap - swaps the value of the last two elements added to the stack
