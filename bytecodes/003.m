@@ -7,15 +7,13 @@
 
 
 
+push 2 
+push 3
+push 4
 
+pop         hola
 
-
-
-
-
-																pop         hola
-
-
+pint
 
 
 

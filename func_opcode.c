@@ -106,12 +106,12 @@ void f_pop(stack_t **head, unsigned int line_number)
 		{
 			aux->prev->next = NULL;
 			aux->prev = NULL;
+			free(aux);
+			break;
 		}
 		aux = aux->next;
 	}
-	free(aux);
 }
-
 /**
  * f_swap - swaps the value of the last two elements added to the stack
  * @head: pointer to list's head
