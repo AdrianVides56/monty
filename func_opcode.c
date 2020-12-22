@@ -131,9 +131,9 @@ void f_swap(stack_t **head, unsigned int line_number)
 	{
 		if (aux->next == NULL)
 		{
-			if (count < 2)
+			if (count < 1)
 				_errors(5, line_number, head);
-			else
+			else if (count > 1)
 			{
 			auxb = auxb->prev;
 			auxb->next = NULL;
@@ -142,6 +142,15 @@ void f_swap(stack_t **head, unsigned int line_number)
 			auxb->prev->next = aux;
 			auxb->prev = aux;
 			break;
+			}
+			else
+			{
+				auxb = auxb->prev;
+				auxb->next = NULL;
+				aux->next = auxb;
+				aux->prev = NULL;
+				auxb->prev = aux;
+				break;
 			}
 		}
 		auxb = auxb->next;
