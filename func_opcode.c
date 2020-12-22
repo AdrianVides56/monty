@@ -145,6 +145,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 				auxb->next = NULL;
 				aux->next = auxb;
 				aux->prev = NULL;
+				
 				auxb->prev = aux;
 				break;
 			}
