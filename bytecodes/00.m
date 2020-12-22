@@ -1,5 +1,5 @@
 
-push 1 estudiante
+push 4 estudiante
 push 2 de
 push 3 holberton
 pall    
