@@ -138,7 +138,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 			auxb->prev->next = aux;
 			auxb->prev = aux;
 			break;
-			}
+			}/*
 			else
 			{
 				auxb = auxb->prev;
@@ -148,7 +148,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 				
 				auxb->prev = aux;
 				break;
-			}
+			}*/
 		}
 		auxb = auxb->next;
 		aux = aux->next;
