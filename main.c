@@ -19,13 +19,13 @@ int main(int ac, char *av[])
 
 	if (ac != 2)
 	{
-		printf("Usage Error\n");
-		return (1);
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
 	if (ifp == NULL)
 	{
-		printf("Not open the file\n");
-		return (1);
+		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
+		exit(EXIT_FAILURE);
 	}
 	while ((read = getline(&aux, &len, ifp)) != -1)
 	{

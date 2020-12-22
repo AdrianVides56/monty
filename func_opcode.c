@@ -12,19 +12,14 @@ void f_push(stack_t **stack, unsigned int line_number)
 
 	last = *stack;
 	if (new_node == NULL)
-	{
-		free_list(*stack);
-		printf("Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+		_errors(1, line_number, stack);
 	if ((isdigit(*second) != 0) || (*second == '-' && isdigit(second[1])))
 		new_node->n = atoi(second);
 	else
 	{
 		free(new_node);
-		free_list(*stack);
-		printf("L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		_errors(2, line_number, stack); /*Incorrect use of push*/
+
 	}
 	new_node->next = NULL;
 	new_node->prev = NULL;
@@ -74,10 +69,7 @@ void f_pint(stack_t **head, unsigned int line_number)
 	stack_t *aux = NULL;
 
 	if (*head == NULL)
-	{
-		printf("L%d: can't pint, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		_errors(3, line_number, head); /*pint failed*/
 
 	aux = *head;
 	while (aux != NULL)
@@ -100,10 +92,7 @@ void f_pop(stack_t **head, unsigned int line_number)
 	stack_t *aux = NULL;
 
 	if (*head == NULL)
-	{
-		printf("L%d: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		_errors(4, line_number, head); /*pop failed*/
 
 	aux = *head;
 	while (aux != NULL)
@@ -128,10 +117,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 	int count = 0;
 
 	if (*head == NULL)
-	{
-		printf("L%d: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		_errors(5, line_number, head);
 
 	aux = auxb = *head;
 	while (aux != NULL)
@@ -139,11 +125,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 		if (aux->next == NULL)
 		{
 			if (count < 2)
-			{
-				printf("L%d: can't swap, stack too short\n",
-				       line_number);
-				exit(EXIT_FAILURE);
-			}
+				_errors(5, line_number, head);
 			else
 			{
 			auxb = auxb->prev;

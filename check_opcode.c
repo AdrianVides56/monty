@@ -8,7 +8,7 @@
  * @line_number: line number read
  * @head: pointer to head of the list
  */
-void checkFunction(const char *token, unsigned int line_number, stack_t **head)
+void checkFunction(char *token, unsigned int line_number, stack_t **head)
 {
 	instruction_t func_code[] = {
 		{ "push", f_push },
