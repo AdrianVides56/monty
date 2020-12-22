@@ -122,14 +122,14 @@ void f_swap(stack_t **head, unsigned int line_number)
 	if (*head == NULL)
 		_errors(5, line_number, head);
 
-	aux = auxb = *head;
+	/*aux = auxb = *head;
 	while (aux != NULL)
 	{
 		if (aux->next == NULL)
 		{
-			if (count < 2 )
+			if (count < 1 )
 				_errors(5, line_number, head);
-			else if (count > 2 )
+			else if (count > 1)
 			{
 			auxb = auxb->prev;
 			auxb->next = NULL;
@@ -138,20 +138,20 @@ void f_swap(stack_t **head, unsigned int line_number)
 			auxb->prev->next = aux;
 			auxb->prev = aux;
 			break;
-			}/*
+			}
 			else
 			{
+				printf("Hay 2\n");
 				auxb = auxb->prev;
 				auxb->next = NULL;
 				aux->next = auxb;
 				aux->prev = NULL;
-				
 				auxb->prev = aux;
 				break;
-			}*/
+			}
 		}
 		auxb = auxb->next;
 		aux = aux->next;
 		count++;
-	}
+	}*/
 }
