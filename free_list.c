@@ -11,6 +11,7 @@ void free_list(stack_t *stack)
 	while (aux != NULL)
 	{
 		stack_t *next = aux->next;
+
 		free(aux);
 		aux = next;
 	}

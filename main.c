@@ -12,7 +12,7 @@ int main(int ac, char *av[])
 	FILE *ifp = fopen(av[1], "r");
 	stack_t *stack = NULL;
 	ssize_t read = 0;
-	unsigned  int line_number = 1;
+	unsigned  int line_number = 0;
 	size_t len = 0;
 	char *aux = NULL;
 	char *token = NULL;
@@ -29,13 +29,11 @@ int main(int ac, char *av[])
 	}
 	while ((read = getline(&aux, &len, ifp)) != -1)
 	{
+		line_number += 1;
 		if (*aux != '\n')
 		{
-/*			if (*aux == ' ')
-				token = strtok(aux, DELIM);
-				if (*aux != ' ')*/
 			token = strtok(aux, DELIM);
-			if(token != NULL)
+			if (token != NULL)
 			{
 			if (*token == '#')
 				continue;
@@ -45,7 +43,6 @@ int main(int ac, char *av[])
 				second = NULL;
 			checkFunction(token, line_number, &stack);
 			}
-			line_number += 1;
 		}
 	}
 	free(aux);
