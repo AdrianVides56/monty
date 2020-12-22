@@ -39,3 +39,11 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 ```
+---
+## Compilation & Output
+- Your code will be compiled this way:
+```c
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+```
+- Any output must be printed on stdout
+- Any error message must be printed on stderr
