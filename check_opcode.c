@@ -31,7 +31,7 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 	}
 	if (i == 5)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n",
+		fprintf(stderr, "L%u: unknown instruction %s\n",
 			line_number, token);
 		exit(EXIT_FAILURE);
 	}

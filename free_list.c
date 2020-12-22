@@ -6,13 +6,12 @@
  */
 void free_list(stack_t *stack)
 {
-	stack_t *aux;
+	stack_t *aux = stack;
 
-	while (stack != NULL)
+	while (aux != NULL)
 	{
-		aux = stack->next;
-		free(stack);
-		stack = aux;
+		stack_t *next = aux->next;
+		free(aux);
+		aux = next;
 	}
-	stack = NULL;
 }

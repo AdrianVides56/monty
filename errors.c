@@ -20,22 +20,22 @@ void _errors(int errornum, unsigned int __attribute__((unused)) line_number,
 	if (errornum == 2) /*Incorrect use of push*/
 	{
 		free_list(*stack);
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (errornum == 3) /*pint failed*/
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (errornum == 4) /*pop failed*/
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (errornum == 5) /*swap failed*/
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n",
+		fprintf(stderr, "L%u: can't swap, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
