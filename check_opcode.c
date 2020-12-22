@@ -11,18 +11,15 @@
 void checkFunction(char *token, unsigned int line_number, stack_t **head)
 {
 	instruction_t func_code[] = {
-		{ "push", f_push },
-		{ "pall", f_pall },
-		{ "pint", f_pint },
-		{ "pop", f_pop },
-		{ "swap", f_swap },
-		{ "add", f_add},
-		{ "nop", f_nop },
+		{ "push", f_push }, { "pall", f_pall },
+		{ "pint", f_pint }, { "pop", f_pop },
+		{ "swap", f_swap }, { "add", f_add },
+		{ "nop", f_nop }, { "sub", f_sub},
 		{NULL, NULL}
 	};
 	int i = 0;
 
-	while (i < 7)
+	while (i < 8)
 	{
 		if (strcmp(func_code[i].opcode, token) == 0)
 		{
@@ -31,7 +28,7 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		}
 		i++;
 	}
-	if (i == 7)
+	if (i == 8)
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 			line_number, token);

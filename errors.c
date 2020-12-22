@@ -48,3 +48,21 @@ void _errors(int errornum, unsigned int __attribute__((unused)) line_number,
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * _errors2 - manages the errors
+ * @errornum: number of error
+ * @line_number: line number read
+ * @stack: pointer to list's head
+ */
+void _errors2(int errornum, unsigned int __attribute__((unused)) line_number,
+	     stack_t **stack)
+{
+	if (errornum == 7) /*sub failed*/
+	{
+		free_list(*stack);
+		fprintf(stderr, "L%u: can't sub, stack too short\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+}

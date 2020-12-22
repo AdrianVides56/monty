@@ -40,8 +40,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Function that check for errors */
+/* Functions that check for errors */
 void _errors(int errornum, unsigned int line_number, stack_t **stack);
+void _errors2(int errornum, unsigned int __attribute__((unused)) line_number,
+	      stack_t **stack);
 
 /* Checks if the line read is a valid argument */
 void checkFunction(char *token, unsigned int line_number, stack_t **head);
@@ -63,5 +65,6 @@ void f_pop(stack_t **head, unsigned int line_number);
 void f_swap(stack_t **head, unsigned int line_number);
 void f_nop(stack_t **head, unsigned int line_number);
 void f_add(stack_t **head, unsigned int line_number);
+void f_sub(stack_t **head, unsigned int line_number);
 
 #endif /* MONTY_H */
