@@ -10,7 +10,7 @@ push 3
 push 4
 
 pop         hola
-nop
+                nop          
 pall
 nop 3
 

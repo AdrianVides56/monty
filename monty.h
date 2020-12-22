@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,17 +40,28 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Function that check for errors */
 void _errors(int errornum, unsigned int line_number, stack_t **stack);
+
+/* Checks if the line read is a valid argument */
 void checkFunction(char *token, unsigned int line_number, stack_t **head);
+
+/* Checks if the argument read is push */
 int check_push(char *s);
-void f_push(stack_t **stack, unsigned int line_number);
+
+/* Checks if second argument is an integer */
+int _parseArg(char *c);
+
+/* Frees the list */
 void free_list(stack_t *stack);
+
+/* Op_code functions */
+void f_push(stack_t **stack, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
 void f_pint(stack_t **head, unsigned int line_number);
 void f_pop(stack_t **head, unsigned int line_number);
 void f_swap(stack_t **head, unsigned int line_number);
-void f_nop(stack_t __attribute__((unused)) **head,
-	   unsigned int __attribute__((unused)) line_number);
-int _parseArg(char *c);
+void f_nop(stack_t **head, unsigned int line_number);
+void f_add(stack_t **head, unsigned int line_number);
 
-#endif
+#endif /* MONTY_H */

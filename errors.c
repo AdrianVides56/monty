@@ -40,4 +40,11 @@ void _errors(int errornum, unsigned int __attribute__((unused)) line_number,
 			line_number);
 		exit(EXIT_FAILURE);
 	}
+	if (errornum == 6) /*add failed*/
+	{
+		free_list(*stack);
+		fprintf(stderr, "L%u: can't add, stack too short\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
 }
