@@ -49,6 +49,8 @@ void f_pall(stack_t **head, unsigned int line_number);
 void f_pint(stack_t **head, unsigned int line_number);
 void f_pop(stack_t **head, unsigned int line_number);
 void f_swap(stack_t **head, unsigned int line_number);
+void f_nop(stack_t __attribute__((unused)) **head,
+	   unsigned int __attribute__((unused)) line_number);
 int _parseArg(char *c);
 
 #endif

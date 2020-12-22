@@ -1,7 +1,5 @@
-
-
-
-
+nop
+nop nop
 
 
 
@@ -12,8 +10,9 @@ push 3
 push 4
 
 pop         hola
-
-pint
+nop
+pall
+nop 3
 
 
 
