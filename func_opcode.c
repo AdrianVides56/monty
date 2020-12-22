@@ -127,9 +127,9 @@ void f_swap(stack_t **head, unsigned int line_number)
 	{
 		if (aux->next == NULL)
 		{
-			if (count < 1)
+			if (count < 2 )
 				_errors(5, line_number, head);
-			else if (count > 1)
+			else if (count > 2 )
 			{
 			auxb = auxb->prev;
 			auxb->next = NULL;
