@@ -20,7 +20,7 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 	};
 	int i = 0;
 
-	while (func_code[i].opcode != NULL && token != NULL)
+	while (i < 5)
 	{
 		if (strcmp(func_code[i].opcode, token) == 0)
 		{
@@ -29,8 +29,12 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		}
 		i++;
 	}
-/*Print Error*/
-/*EXIT FAILURE */
+	if (i == 5)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n",
+			line_number, token);
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**

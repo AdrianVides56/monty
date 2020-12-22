@@ -31,9 +31,9 @@ int main(int ac, char *av[])
 	{
 		if (*aux != '\n')
 		{
-			if (*aux == ' ')
+/*			if (*aux == ' ')
 				token = strtok(aux, DELIM);
-			if (*aux != ' ')
+				if (*aux != ' ')*/
 				token = strtok(aux, DELIM);
 			if (*token == '#')
 				continue;
