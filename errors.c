@@ -35,6 +35,7 @@ void _errors(int errornum, unsigned int __attribute__((unused)) line_number,
 	}
 	if (errornum == 5) /*swap failed*/
 	{
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't swap, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
