@@ -105,6 +105,7 @@ void f_pop(stack_t **head, unsigned int line_number)
 		if (aux->next == NULL)
 		{
 			aux->prev->next = NULL;
+			aux->prev = NULL;
 		}
 		aux = aux->next;
 	}
