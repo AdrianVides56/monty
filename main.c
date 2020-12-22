@@ -34,7 +34,9 @@ int main(int ac, char *av[])
 /*			if (*aux == ' ')
 				token = strtok(aux, DELIM);
 				if (*aux != ' ')*/
-				token = strtok(aux, DELIM);
+			token = strtok(aux, DELIM);
+			if(token != NULL)
+			{
 			if (*token == '#')
 				continue;
 			if (check_push(token) != 0 && token != NULL)
@@ -42,6 +44,7 @@ int main(int ac, char *av[])
 			else
 				second = NULL;
 			checkFunction(token, line_number, &stack);
+			}
 			line_number += 1;
 		}
 	}
