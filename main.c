@@ -1,5 +1,5 @@
 #include "monty.h"
-#define DELIM " \t\n"
+#define DELIM " \t\n\r"
 
 /**
  * main - entry point
