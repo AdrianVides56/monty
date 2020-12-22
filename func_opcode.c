@@ -13,17 +13,14 @@ void f_push(stack_t **stack, unsigned int line_number)
 	last = *stack;
 	if (new_node == NULL)
 		_errors(1, line_number, stack);
-	if (second == NULL)
+	if (second == NULL || _parseArg(second) == 0)
 	{
 		free(new_node);
 		_errors(2, line_number, stack);
 	}
 	if ((isdigit(*second) != 0) || (*second == '-' && isdigit(second[1])))
 		new_node->n = atoi(second);
-	else
-	{
-		_errors(2, line_number, stack);
-	}
+
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	if (*stack == NULL)

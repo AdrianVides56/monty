@@ -56,3 +56,21 @@ int check_push(char *s)
 		return (1);
 	return (0);
 }
+
+/**
+ * _parseArg - checks if the argument of push is a integer
+ * @c: argument
+ * Return: 1 on Success, or 0 on failure
+ */
+int _parseArg(char *c)
+{
+	int idx = 0;
+
+	while (((c[idx] <= '9' && c[idx] >= '0') || (c[0] == '-')) && c != 0)
+	{
+		if (c[idx + 1] == 0)
+			return (1);
+		idx++;
+	}
+	return (0);
+}
