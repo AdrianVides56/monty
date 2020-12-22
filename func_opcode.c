@@ -122,7 +122,7 @@ void f_swap(stack_t **head, unsigned int line_number)
 	if (*head == NULL)
 		_errors(5, line_number, head);
 
-	/*aux = auxb = *head;
+	aux = auxb = *head;
 	while (aux != NULL)
 	{
 		if (aux->next == NULL)
@@ -153,5 +153,5 @@ void f_swap(stack_t **head, unsigned int line_number)
 		auxb = auxb->next;
 		aux = aux->next;
 		count++;
-	}*/
+	}
 }
