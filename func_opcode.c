@@ -100,10 +100,7 @@ void f_swap(stack_t **stack, unsigned int line_number)
 	if ((*stack) == NULL)
 		_errors(5, line_number, stack); /* Swap failed */
 	else if ((*stack)->prev == NULL && (*stack)->next == NULL)
-	{
-		free_list(*stack);
 		_errors(5, line_number, stack);
-	}
 	else
 	{
 		swap_aux = (*stack)->n;
