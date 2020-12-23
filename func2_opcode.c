@@ -60,7 +60,7 @@ void f_div(stack_t **head, unsigned int line_number)
 	int div;
 
 	if (*head == NULL || ((*head)->prev == NULL && (*head)->next == NULL))
-		_errors2(8, line_number, head); /* sub failed */
+		_errors2(8, line_number, head); /* div failed */
 	if ((*head)->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);

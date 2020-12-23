@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * f_div - divides the two top elements on the stack
+ * f_mod - calcs the module of the two top elements on the stack
  * @head: This is the list head
  * @line_number: Line number read
  *
@@ -11,7 +11,7 @@ void f_mod(stack_t **head, unsigned int line_number)
 	int mod;
 
 	if (*head == NULL || ((*head)->prev == NULL && (*head)->next == NULL))
-		_errors2(8, line_number, head); /* sub failed */
+		_errors2(10, line_number, head); /* mod failed */
 	if ((*head)->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);

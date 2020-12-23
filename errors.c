@@ -79,4 +79,11 @@ void _errors2(int errornum, unsigned int __attribute__((unused)) line_number,
 			line_number);
 		exit(EXIT_FAILURE);
 	}
+	if (errornum == 10) /*mul failed*/
+	{
+		free_list(*stack);
+		fprintf(stderr, "L%u: can't mod, stack too short\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
 }
