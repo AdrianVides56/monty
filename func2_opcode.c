@@ -42,7 +42,7 @@ void f_sub(stack_t **head, unsigned int line_number)
 	int sub;
 
 	if (*head == NULL || ((*head)->prev == NULL && (*head)->next == NULL))
-		_errors(6, line_number, head); /* sub failed */
+		_errors(7, line_number, head); /* sub failed */
 
 	sub = (*head)->next->n - (*head)->n;
 	f_pop(head, line_number);
