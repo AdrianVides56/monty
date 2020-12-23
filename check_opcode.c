@@ -33,6 +33,7 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 			line_number, token);
 		free(token);
+		free_list(*stack);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -12,7 +12,10 @@ void f_push(stack_t **stack, unsigned int line_number)
 
 	last = *stack;
 	if (new_node == NULL)
+	{
+		free(second);
 		_errors(1, line_number, stack);
+	}
 	if (second == NULL || _parseArg(second) == 0)
 	{
 		free(new_node);
