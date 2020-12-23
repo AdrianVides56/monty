@@ -90,7 +90,7 @@ void f_pint(stack_t **head, unsigned int line_number)
  * @line_number: line number read
  */
 void f_pop(stack_t **head, unsigned int line_number)
-{	
+{
 	stack_t *aux = *head;
 
 	if (aux == NULL)
@@ -110,7 +110,7 @@ void f_pop(stack_t **head, unsigned int line_number)
 }
 /**
  * f_swap - swaps the value of the last two elements added to the stack
- * @head: pointer to list's head
+ * @stack: pointer to list's head
  * @line_number: line number read
  */
 

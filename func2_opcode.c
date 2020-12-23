@@ -2,7 +2,7 @@
 
 /**
  * f_nop - does nothing
- * @head: pointer to list's head
+ * @stack: pointer to list's head
  * @line_number: line number read
  */
 void f_nop(stack_t **stack, unsigned int line_number)
