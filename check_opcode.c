@@ -15,7 +15,8 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		{ "pint", f_pint }, { "pop", f_pop },
 		{ "swap", f_swap }, { "add", f_add },
 		{ "nop", f_nop }, { "sub", f_sub },
-		{ "mul", f_mul }, {NULL, NULL}
+		{ "div", f_div }, { "mul", f_mul },
+		{NULL, NULL}
 	};
 	int i = 0;
 
