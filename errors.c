@@ -86,4 +86,12 @@ void _errors2(int errornum, unsigned int __attribute__((unused)) line_number,
 			line_number);
 		exit(EXIT_FAILURE);
 	}
+
+	if (errornum == 11) /*pchar failed*/
+	{
+		free_list(*stack);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
 }
