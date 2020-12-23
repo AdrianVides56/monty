@@ -72,4 +72,5 @@ void f_pstr(stack_t **head, unsigned int line_number)
 		aux = aux->next;
 	}
 	printf("\n");
+	(void)line_number;
 }
