@@ -109,6 +109,7 @@ your@shell:~/ex$
 ---
 ---
 # Tasks
+        
 ### 0. push, pall
 - Implement the push and pall opcodes.
 
