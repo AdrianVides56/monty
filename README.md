@@ -237,3 +237,9 @@ your@shell:~/monty$ ./monty bytecodes/12.m
 your@shell:~/monty$
 ```
 ---
+### 5. nop mandatory
+- Implement the nop opcode.
+    - The nop opcode
+    - The opcode nop doesn’t do anything.
+        - Usage: nop
+---
