@@ -5,10 +5,11 @@
  * @head: pointer to list's head
  * @line_number: line number read
  */
-void f_nop(stack_t **head, unsigned int line_number)
+void f_nop(stack_t **stack, unsigned int line_number)
 {
-	(void)head;
+	return;
 	(void)line_number;
+	(void)**stack;
 }
 
 /**
