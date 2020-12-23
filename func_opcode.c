@@ -11,6 +11,7 @@ void f_push(stack_t **stack, unsigned int line_number)
 
 	if (new_node == NULL)
 	{
+		free(new_node);
 		free(second);
 		_errors(1, line_number, stack); /* Failed malloc */
 	}
