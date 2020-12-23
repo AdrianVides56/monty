@@ -63,6 +63,7 @@ void f_pstr(stack_t **head, unsigned int line_number)
 	if (*head == NULL)
 	{
 		printf("\n");
+		return;
 	}
 	while (aux != NULL)
 	{
