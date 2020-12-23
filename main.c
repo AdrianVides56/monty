@@ -45,8 +45,8 @@ int main(int ac, char *av[])
 			}
 		}
 	}
-	free(token);
 	free_list(stack);
+	free(token);
 	fclose(ifp);
 	return (0);
 }
