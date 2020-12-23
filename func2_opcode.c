@@ -21,21 +21,14 @@ void f_nop(stack_t **stack, unsigned int line_number)
 
 void f_add(stack_t **head, unsigned int line_number)
 {
-	stack_t *aux = *head;
+	int sum;
 
-	if (*head == NULL || aux->next == NULL)
-	{
-		_errors(6, line_number, head);
-	}
-	while (aux != NULL)
-	{
-		if (aux->next == NULL)
-		{
-			aux->prev->n += aux->n;
-			f_pop(head, line_number);
-		}
-		aux = aux->next;
-	}
+	if (*head == NULL || ((*head)->prev == NULL && (*head)->next == NULL))
+		_errors(6, line_number, head); /* Add failed */
+
+	sum = (*head)->n + (*head)->next->n;
+	f_pop(head, line_number);
+	(*head)->n = sum;
 }
 
 /**
