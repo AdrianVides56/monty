@@ -117,44 +117,22 @@ void f_pop(stack_t **head, unsigned int line_number)
  * @head: pointer to list's head
  * @line_number: line number read
  */
-void f_swap(stack_t **head, unsigned int line_number)
+
+void f_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *aux = NULL, *auxb = NULL;
-	int count = 0;
+	int swap_aux;
 
-	if (*head == NULL)
-		_errors(5, line_number, head);
-
-	aux = auxb = *head;
-	while (aux != NULL)
+	if ((*stack) == NULL)
+		_errors(5, line_number, stack);
+	else if ((*stack)->prev == NULL && (*stack)->next == NULL)
 	{
-		if (aux->next == NULL)
-		{
-			if (count < 1)
-				_errors(5, line_number, head);
-			else if (count > 1)
-			{
-			auxb = auxb->prev;
-			auxb->next = NULL;
-			aux->prev = auxb->prev;
-			aux->next = auxb;
-			auxb->prev->next = aux;
-			auxb->prev = aux;
-			break;
-			}
-			else
-			{
-				printf("Hay 2\n");
-				auxb = auxb->prev;
-				auxb->next = NULL;
-				aux->next = auxb;
-				aux->prev = NULL;
-				auxb->prev = aux;
-				break;
-			}
-		}
-		auxb = auxb->next;
-		aux = aux->next;
-		count++;
+		free_list(*stack);
+		_errors(5, line_number, stack);
+	}
+	else
+	{
+		swap_aux = (*stack)->n;
+		(*stack)->n = ((*stack)->next)->n;
+		(*stack)->next->n = swap_aux;
 	}
 }
