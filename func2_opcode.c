@@ -83,7 +83,7 @@ void f_mul(stack_t **head, unsigned int line_number)
 	int mul;
 
 	if (*head == NULL || ((*head)->prev == NULL && (*head)->next == NULL))
-		_errors2(8, line_number, head); /* sub failed */
+		_errors2(9, line_number, head); /* sub failed */
 
 	mul = (*head)->next->n * (*head)->n;
 	f_pop(head, line_number);
