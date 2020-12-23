@@ -90,27 +90,23 @@ void f_pint(stack_t **head, unsigned int line_number)
  * @line_number: line number read
  */
 void f_pop(stack_t **head, unsigned int line_number)
-{
-	stack_t *aux = NULL;
+{	
+	stack_t *aux = *head;
 
-	if (*head == NULL)
-		_errors(4, line_number, head); /*pop failed*/
+	if (aux == NULL)
+		_errors(4, line_number, head);
 
-	aux = *head;
-	while (aux != NULL)
+	else if (aux->prev == NULL && aux->next == NULL)
 	{
-		if (aux->next == NULL && aux->prev != NULL)
-		{
-			aux->prev->next = NULL;
-		}
-		else if (aux->prev == NULL && aux->next == NULL)
-		{
-			free(aux);
-			*head = NULL;
-		}
-		aux = aux->next;
+		free(aux);
+		*head = NULL;
 	}
-	free(aux);
+	else if (aux->next != NULL)
+	{
+		*head = aux->next;
+		(*head)->prev = NULL;
+		free(aux);
+	}
 }
 /**
  * f_swap - swaps the value of the last two elements added to the stack
