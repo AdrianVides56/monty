@@ -63,7 +63,7 @@ void f_div(stack_t **head, unsigned int line_number)
 		_errors2(8, line_number, head); /* sub failed */
 	if ((*head)->n == 0)
 	{
-		printf("L%d: division by zero\n", line_number);
+		printf("L%u: division by zero\n", line_number);
 		free_list(*head);
 		exit(EXIT_FAILURE);
 	}
