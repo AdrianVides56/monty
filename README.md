@@ -24,6 +24,7 @@
 ##### You are expected to do the tasks in the order shown in the project
 ---
 ## Data structures
+
 Please use the following data structures for this project. Don’t forget to include them in your header file.
 ```c
 typedef struct stack_s
