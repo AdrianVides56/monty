@@ -90,8 +90,7 @@ void f_rotl(stack_t **head, unsigned int line_number)
 	stack_t *aux, *new_node;
 
 	if (*head == NULL)
-	{
-		printf("\n");
+	{	
 		return;
 	}
 	new_node = (stack_t *) malloc(sizeof(stack_t));
