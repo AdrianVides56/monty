@@ -100,7 +100,6 @@ void f_rotl(stack_t **head, unsigned int line_number)
 
 	if ((*head)->next == NULL && (*head)->prev == NULL)
 	{
-		printf("%u\n", (*head)->n);
 		return;
 	}
 	new_node->n = (*head)->n;
