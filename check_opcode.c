@@ -18,11 +18,11 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		{ "div", f_div }, { "mul", f_mul },
 		{ "mod", f_mod }, {"pchar", f_pchar},
 		{"pstr", f_pstr}, {"rotl", f_rotl},
-		{NULL, NULL}
+		{"rotr", f_rotr}, {NULL, NULL}
 	};
 	int i = 0;
 
-	while (i < 14)
+	while (i < 15)
 	{
 		if (strcmp(func_code[i].opcode, token) == 0)
 		{
@@ -31,7 +31,7 @@ void checkFunction(char *token, unsigned int line_number, stack_t **head)
 		}
 		i++;
 	}
-	if (i == 14)
+	if (i == 15)
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 			line_number, token);
