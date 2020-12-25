@@ -7,7 +7,6 @@
 #include <ctype.h>
 #include <unistd.h>
 
-
 char *second;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -71,4 +70,5 @@ void f_div(stack_t **head, unsigned int line_number);
 void f_mod(stack_t **head, unsigned int line_number);
 void f_pchar(stack_t **head, unsigned int line_number);
 void f_pstr(stack_t **head, unsigned int line_number);
+void f_rotl(stack_t **head, unsigned int line_number);
 #endif /* MONTY_H */
