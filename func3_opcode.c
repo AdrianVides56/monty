@@ -89,8 +89,12 @@ void f_rotl(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux, *new_node;
 
-	if (*head == NULL)
-	{	
+	if (*head == NULL )
+	{
+		return;
+	}
+	if ((*head)->next == NULL && (*head)->prev == NULL)
+	{
 		return;
 	}
 	new_node = (stack_t *) malloc(sizeof(stack_t));
@@ -98,11 +102,6 @@ void f_rotl(stack_t **head, unsigned int line_number)
 	if (new_node == NULL)
 		_errors(1, line_number, head); /* Failed malloc */
 
-	if ((*head)->next == NULL && (*head)->prev == NULL)
-	{
-		free(new_node);
-		return;
-	}
 	new_node->n = (*head)->n;
 	f_pop(head, line_number);
 	aux = (*head);

@@ -1,3 +1,3 @@
-push 98
+push 10
 rotl
-pall
+push 10
