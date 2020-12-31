@@ -4,7 +4,7 @@
 /**
  * main - entry point
  * @ac: number of arguments
- * @av: arguments
+ * @av: arguments_
  * Return: 0 on Success
  */
 int main(int ac, char *av[])

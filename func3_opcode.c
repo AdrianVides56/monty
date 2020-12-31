@@ -2,7 +2,7 @@
 
 /**
  * f_mod - calcs the module of the two top elements on the stack
- * @head: This is the list head
+ * @head: This is the list head:
  * @line_number: Line number read
  *
  */

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * free_list - frees a list
+ * free_list - frees a list_
  * @stack: pointer to list's head
  */
 void free_list(stack_t *stack)

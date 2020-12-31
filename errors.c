@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _errors - manages the errors
+ * _errors - manages the errors-
  * @errornum: number of error
  * @line_number: line number read
  * @stack: pointer to list's head

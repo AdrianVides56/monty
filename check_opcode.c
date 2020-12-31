@@ -4,7 +4,7 @@
  * checkFunction - function that selects the correct function to perform the
  *               operation asked by the user.
  *
- * @token: This is the input operator
+ * @token: This is the input operator-
  * @line_number: line number read
  * @head: pointer to head of the list
  */

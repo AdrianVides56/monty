@@ -3,7 +3,7 @@
 /**
  * f_push - adds a new element into the stack
  * @stack: pointer to list's head
- * @line_number: line number read
+ * @line_number: line number read_
  */
 void f_push(stack_t **stack, unsigned int line_number)
 {
